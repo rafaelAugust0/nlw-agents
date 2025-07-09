@@ -8,6 +8,7 @@ import {
 import {fastifyCors} from '@fastify/cors'
 import { sql } from './db/connection.ts';
 import dotenv from 'dotenv';
+import { getRoomsRoute } from './http/routes/get-rooms.ts';
 
 dotenv.config();
 
@@ -24,6 +25,8 @@ const PORT = process.env.PORT || 3333;
 app.get('/health', () => {
     return 'OK'
 })
+
+app.register(getRoomsRoute)
 
 app.listen({ port: Number(PORT)}).then(() => {
     console.log("HTTP SERVER RUNNING!");
