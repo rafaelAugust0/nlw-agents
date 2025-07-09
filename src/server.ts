@@ -6,6 +6,7 @@ import {
 } from 'fastify-type-provider-zod'
 
 import {fastifyCors} from '@fastify/cors'
+import { sql } from './db/connection.ts';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -27,3 +28,4 @@ app.get('/health', () => {
 app.listen({ port: Number(PORT)}).then(() => {
     console.log("HTTP SERVER RUNNING!");
 });
+
