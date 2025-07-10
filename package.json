@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node --env-file .env --loader ts-node/esm src/server.ts",
     "dev": "node --env-file .env --loader ts-node/esm src/server.ts",
-    "db:seed": "node --env-file .env --loader ts-node/esm src/db/seed.ts"
+    "db:seed": "node --env-file .env --loader ts-node/esm src/db/seed.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"
   },
   "repository": {
     "type": "git",
